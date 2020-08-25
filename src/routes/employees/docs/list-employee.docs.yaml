@@ -1,0 +1,15 @@
+/employee/list-employee:
+  get:
+    summary: api for listing employees.
+    tags:
+      - Employee
+    description: api for listing employees
+    parameters:
+      - name: X-Requested-With
+        description: set value to XMLHttpRequest if you are making an xhr request
+        in: header
+        required: true
+        default: XMLHttpRequest
+    responses:
+      200:
+        description: "successful attempt, returns `success message`"

@@ -24,13 +24,17 @@ userSchema.pre('save', function save(next) {
   if (!user.isModified('password')) {
     return next();
   }
-  bcrypt.hash(user.password, 10, (err, hash) => {
-    if (err) {
-      return next(err);
-    }
-    user.password = hash;
+  if (user.password) {
+    bcrypt.hash(user.password, 10, (err, hash) => {
+      if (err) {
+        return next(err);
+      }
+      user.password = hash;
+      next();
+    });
+  } else {
     next();
-  });
+  }
 });
 
 userSchema.methods.comparePassword = async function(candidatePassword: string) {

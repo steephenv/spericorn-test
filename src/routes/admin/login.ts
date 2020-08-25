@@ -10,7 +10,7 @@ export const login: RequestHandler = async (req, res, next) => {
   try {
     req.body.username = (req.body.username as string).toLowerCase();
     const user: any = await User.findOne({ email: req.body.username }).exec();
-    if (!user) {
+    if (!user || user.role !== 'ADMIN') {
       return res.status(401).send({ message: 'Invalid User' });
     }
 

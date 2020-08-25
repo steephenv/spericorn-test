@@ -5,6 +5,7 @@ import * as express from 'express';
 import { swaggerSpec } from './swagger';
 
 import { user } from './admin';
+import { employee } from './employees';
 // import { payment } from './payment';
 
 // import { attachTokenData } from './access-control/attach-token-data';
@@ -14,6 +15,7 @@ import { user } from './admin';
 export const apis = express.Router();
 
 apis.use('/user', user);
+apis.use('/employee', employee);
 // apis.use('/payment', payment);
 // load docs if requested
 if (getConfig('app.docs')) {
