@@ -14,10 +14,7 @@
     "clean-build": "gulp clean-build",
     "compile": "tsc",
     "prettier": "prettier '{src/**/*.*,typings/**/*.*,tests/**/*.*}' --write",
-    "tslint": "tslint -c tslint.json -p tsconfig.json -t stylish --fix '{src,tests}/**/*.ts'",
-    "staging": "export NODE_ENV=production && export NODE_APP_INSTANCE=beta NODE_CONFIG_DIR=config && node ./bin/www.js",
-    "production-beta": "export NODE_ENV=production && export NODE_APP_INSTANCE=staging && node bin/www.js",
-    "production-production": "export NODE_ENV=production && export NODE_APP_INSTANCE=production && node bin/www.js"
+    "tslint": "tslint -c tslint.json -p tsconfig.json -t stylish --fix '{src,tests}/**/*.ts'"
   },
   "repository": {
     "type": "git"
