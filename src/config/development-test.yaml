@@ -1,0 +1,13 @@
+# this file is taken only when
+# full test is ran, like `npm test`
+# ---------------------------------
+# created to use withinh development machines
+app:
+  docs: false
+  logging: true # for logging stuffs out
+  morgan: false # for request logging
+  # AWS_BUCKET_NAME: 
+  # AWS_SECRET_ACCESS_KEY: 
+  # AWS_ACCESS_KEY_ID: 
+  # AWS_REGION: eu-central-1
+

@@ -1,0 +1,15 @@
+# configuration for cubet pcs
+# every loacal pc's should own a mongodb as its own
+app:
+  logging: true
+  morgan: true
+  port: 7000
+  mailService:
+    user: 
+    pass: 
+
+docsUrl: "localhost:7000"
+
+database:
+   url: mongodb://localhost:27017/spericorn-test
+

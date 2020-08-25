@@ -1,0 +1,20 @@
+app:
+  port: 7000
+  combinedLogger: true #for morgan and winston
+  defaultLogLevel: info
+  docs: true
+  jwt:
+    SecretKey: iloveyou3000
+    accessTokenExpiryTime: 7d
+  mailService:
+    user: 
+    pass:   
+
+docsUrl: "localhost:7000"
+
+database:
+   url: mongodb://localhost:27017/spericorn-test
+AWS_BUCKET_NAME: original_bucket_name
+AWS_ACCESS_KEY_ID: original_key_id
+AWS_SECRET_ACCESS_KEY: original_access_key
+AWS_REGION: original_region

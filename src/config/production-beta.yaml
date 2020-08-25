@@ -1,0 +1,16 @@
+# production beta in cloud
+# used for internal use
+app:
+  port: 7555
+  combinedLogger: true #for morgan and winston
+  defaultLogLevel: info
+  docs: true
+  logging: true
+  morgan: true
+  mailService:
+    user: 
+    pass: 
+docsUrl: 
+database:
+  url: 
+

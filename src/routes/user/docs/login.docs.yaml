@@ -1,0 +1,33 @@
+/user/login:
+  post:
+    # security:
+    # - Bearer: []
+    summary: api for login.
+    tags:
+      - Authentication
+    description: api for login
+    parameters:
+      - name: X-Requested-With
+        description: set value to XMLHttpRequest if you are making an xhr request
+        in: header
+        required: true
+        default: XMLHttpRequest
+      - name: Body
+        description: ""
+        in: body
+        required: true
+        schema:
+          type: object
+          required:
+            - username
+            - password
+          properties:
+            username:
+              type: string
+              example: stark@marvel.com
+            password:
+              type: string
+              example: password
+    responses:
+      200:
+        description: "successful attempt, returns `success message`"

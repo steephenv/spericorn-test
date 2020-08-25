@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>API Home</title>
+    <style>
+      body {
+        font-family: "monospace";
+        margin: 3%;
+        background-color: #0091ca;
+        color: #fff;
+      }
+
+      img {
+        width: 100px;
+      }
+
+      .btn {
+        text-decoration: none;
+        padding: 5px 8px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 1px black;
+      }
+
+      .btn:hover {
+        box-shadow: 1px 1px 10px black;
+      }
+
+      .bGreen {
+        background-color: #0335da;
+        color: black;
+        text-transform: uppercase;
+      }
+
+      .bWhite {
+        background-color: white;
+        color: #6200ee;
+        text-transform: uppercase;
+      }
+
+      .graph {
+        background-color: rgb(255, 0, 140);
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .left {
+        width: 50%;
+        float: left;
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="left">
+      <img src="/images/api.png" alt="apis" />
+      <h2 style="margin: 10px auto">API home</h2>
+      <div class="del-in-prod">
+        <br />
+        <a href="/docs" class="btn bGreen">REST Docs</a>
+        <br />
+        <br />
+      </div>
+      <br />
+      <br />
+      <p>
+        Last updated at:
+        <strong>
+          <span id="lastUpdatedTime" style="color:#6200ee;"></span>
+        </strong>
+      </p>
+    </div>
+    <div class="right"></div>
+
+    <script>
+      var dateSetByServer = "--this-will-be-set-in-builds--";
+      function setBuildTime() {
+        function timeSince(date) {
+          var seconds = Math.floor((new Date() - date) / 1000);
+
+          var interval = Math.floor(seconds / 31536000);
+
+          if (interval > 1) {
+            return interval + " years";
+          }
+          interval = Math.floor(seconds / 2592000);
+          if (interval > 1) {
+            return interval + " months";
+          }
+          interval = Math.floor(seconds / 86400);
+          if (interval > 1) {
+            return interval + " days";
+          }
+          interval = Math.floor(seconds / 3600);
+          if (interval > 1) {
+            return interval + " hours";
+          }
+          interval = Math.floor(seconds / 60);
+          if (interval > 1) {
+            return interval + " minutes";
+          }
+          return Math.floor(seconds) + " seconds";
+        }
+        // hack
+        if (dateSetByServer === "--this-will-be-" + "set-in-builds--") {
+          document.getElementById("lastUpdatedTime").innerHTML =
+            "only visible in builds";
+        } else {
+          var dateInfo = new Date(dateSetByServer);
+          document.getElementById("lastUpdatedTime").innerHTML =
+            timeSince(dateInfo) + " ago";
+        }
+      }
+      setBuildTime();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+/user/register:
+  post:
+    summary: api for register.
+    tags:
+      - Authentication
+    description: api for register
+    parameters:
+      - name: X-Requested-With
+        description: set value to XMLHttpRequest if you are making an xhr request
+        in: header
+        required: true
+        default: XMLHttpRequest
+      - name: Body
+        description: ""
+        in: body
+        required: true
+        schema:
+          type: object
+          required:
+            - firstName
+            - lastName
+            - email
+            - role
+            - password
+          properties:
+            firstName:
+              type: string
+              example: steephen
+            lastName:
+              type: string
+              example: varghese
+            email:
+              type: string
+              example: stark@marvel.com
+            password:
+              type: string
+              example: password
+            role:
+              type: string
+              example: USER
+    responses:
+      200:
+        description: "successful attempt, returns `success message`"

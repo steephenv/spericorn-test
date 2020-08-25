@@ -1,0 +1,13 @@
+--- # ---------------------------------
+# this file is taken only on runner
+# full test is ran, like `npm test`
+app:
+  docs: false
+  logging: true # for logging stuffs out
+  morgan: false # for request logging
+  port: 7000
+
+mails:
+  enable: false
+# database:
+#   url:
