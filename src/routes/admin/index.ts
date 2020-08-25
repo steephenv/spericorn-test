@@ -4,8 +4,8 @@ import { loginRule } from './validators/login.rules';
 import { userRegRules } from './validators/register.rules';
 // import { isLoggedIn } from '../utils/isLoggedIn';
 
-import { login } from '../user/login';
-import { createUser } from '../user/register';
+import { login } from './login';
+import { createUser } from './register';
 
 export const user = express.Router();
 

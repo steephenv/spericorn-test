@@ -4,7 +4,7 @@ import * as express from 'express';
 // swagger
 import { swaggerSpec } from './swagger';
 
-import { user } from './user';
+import { user } from './admin';
 // import { payment } from './payment';
 
 // import { attachTokenData } from './access-control/attach-token-data';
